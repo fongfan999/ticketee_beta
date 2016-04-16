@@ -5,7 +5,6 @@ RSpec.feature "Users can edit existing projects" do
 		FactoryGirl.create(:project, name: "Sublime Text 3")
 
 		visit "/"
-
 		click_link "Sublime Text 3"
 		click_link "Edit Project"
 	end

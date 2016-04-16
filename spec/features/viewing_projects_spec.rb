@@ -5,7 +5,6 @@ RSpec.feature "Users can view projects" do
 		project = FactoryGirl.create(:project, name: "Sublime Text 3")
 
 		visit "/"
-
 		click_link "Sublime Text 3"
 		expect(page.current_url).to eq project_url(project)
 	end
