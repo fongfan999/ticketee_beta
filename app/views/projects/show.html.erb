@@ -1,9 +1,15 @@
 <% title(@project.name, "Projects") %>
-<h1><%= @project.name %></h1>
+
+<header>
+	<h1><%= @project.name %></h1>
+	<ul class="actions">
+		<li><%= link_to "Edit Project", edit_project_path(@project),
+			class: "edit" %></li>
+		<li><%= link_to "Delete Project", project_path(@project),
+			class: "delete",
+			method: :delete,
+			data: { confirm: "Are you sure you want to delete this project?" } %></li>
+	</ul>
+</header>
+
 <p><%= @project.description %></p>
-<%= link_to "Edit Project", edit_project_path(@project) %> | 
-<%= link_to "Delete Project",
-		project_path(@project),
-		method: :delete,
-		data: { confirm: "Are you sure you want to delete this project?" }
-%>
