@@ -24,9 +24,9 @@
 </header>
 
 <ul id="tickets">
-	<% @project.tickets.each do |ticket| %>
+	<% @project.tickets.each_with_index do |ticket, index| %>
 		<li>
-			#<%= ticket.id %> - 
+			#<%= index + 1 %> - 
 			<%= link_to ticket.name, [@project, ticket] %>
 		</li>
 	<% end %>
