@@ -2,12 +2,15 @@ require "rails_helper"
 
 RSpec.feature "Users can delete tickets" do
 	let(:project) { FactoryGirl.create(:project) }
-	let(:ticket) { FactoryGirl.create(:ticket, project: project) }
-
+	let(:author) { FactoryGirl.create(:user) }
+	let(:ticket) do
+		FactoryGirl.create(:ticket, project: project, author: author)
+	end
+	
 	before do
 		visit project_ticket_path(project, ticket)
 	end
-
+	
 	scenario "successfully" do
 		click_link "Delete Ticket"
 
