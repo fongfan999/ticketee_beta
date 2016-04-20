@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def to_s
-  	"#{email} (#{admin? ? "Admin" : "Users"})"
+  	"#{email} (#{admin? ? "Admin" : "User"})"
   end
 end
