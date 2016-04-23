@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
+		authorize @project, :update?
 	end
 
 	def update
