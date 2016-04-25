@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
 # Use Boostrap for stylesheets
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use SCSS for stylesheets
@@ -13,10 +14,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 # Use Simple Form for stylesheets
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
 # Use Devise for authentication
 gem 'devise', '~> 3.5', '>= 3.5.6'
-# User Pundit for setting authorization role
+# Use Pundit for setting authorization role
 gem 'pundit', '~> 1.1'
+
+# Use CarrierWave for uploading files
+gem 'carrierwave', '~> 0.11.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
