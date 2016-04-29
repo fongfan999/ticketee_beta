@@ -66,5 +66,6 @@ group :test do
 	gem 'factory_girl_rails', '~> 4.6'
 	gem 'selenium-webdriver', '~> 2.53'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
+  gem "chromedriver-helper"
 end
 

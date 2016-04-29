@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).on("ready page:load", function() {
+  setTimeout(
+  	function() {
+	   $(".alert").fadeOut();
+	  },
+	  5000
+	);
+});
