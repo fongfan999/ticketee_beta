@@ -24,11 +24,7 @@
 	<table id="attributes">
 		<tr>
 			<th>Author: </th>
-			<% if @ticket.author %>
 			<td><%= @ticket.author.email %></td>
-			<% else %>
-			<td>Kenneth ( Business Owner )</td>
-			<% end %>
 		</tr>
 		<tr>
 			<th>Created: </th>
