@@ -58,4 +58,5 @@ RSpec.configure do |config|
   #Configuring Warden for user in feature specs
   config.include Warden::Test::Helpers, type: :feature
   config.after(type: :feature) { Warden.test_reset! }
+  config.include Devise::TestHelpers, type: :controller
 end
