@@ -14,10 +14,16 @@ class Ticket < ActiveRecord::Base
 
   before_create :assign_default_state
 
+  def show_tags_in_edit
+    tags.map { |tag| [tag.name] }.flatten.join(" ")
+  end
+
   def tag_names=(names)
     @tag_names = names
     names.split.each do |name|
-      self.tags << Tag.find_or_initialize_by(name: name)
+      unless self.tags.exists?(name: name)
+        self.tags << Tag.find_or_initialize_by(name: name)
+      end
     end
   end
 

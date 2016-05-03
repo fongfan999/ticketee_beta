@@ -22,6 +22,10 @@ blockquote.comment p {
 	font-size: 14px;
 }
 
+#tags .label {
+	display: inline-block;
+}
+
 .tag {
 	@extend .state;
 	@extend .label-info;

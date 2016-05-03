@@ -1,0 +1,7 @@
+<% if current_page?(action: 'edit') %>
+	<%= f.input :tag_names, label: "Tags", hint: "separated by a space", 
+		input_html: { value: ticket.show_tags_in_edit } %>
+<% else %>
+	<%= f.input :tag_names, label: "Tags", hint: "separated by a space" %>
+<% end %>
+
