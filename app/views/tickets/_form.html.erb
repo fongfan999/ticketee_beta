@@ -1,7 +1,9 @@
 <%= simple_form_for([project, ticket]) do |f| %>
 	<%= f.input :name %>
 	<%= f.input :description %>
-	<%= render "tags/form", f: f, ticket: ticket %>
+	<% if policy(ticket).tag? %>
+		<%= render "tags/form", f: f, project: project, ticket: ticket %>
+	<% end %>
 
 	<div id="attachments">
 		<h3>Attachments</h3>

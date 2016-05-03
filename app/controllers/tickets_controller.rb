@@ -9,7 +9,9 @@ class TicketsController < ApplicationController
 	end
 
 	def create
-		@ticket = @project.tickets.build(ticket_params)
+		@ticket = @project.tickets.new
+
+		@ticket.attributes = sanitized_parameters
 		@ticket.author = current_user
 
 		authorize @ticket, :create?
@@ -35,7 +37,7 @@ class TicketsController < ApplicationController
 	def update
 		authorize @ticket, :update?
 		
-		if @ticket.update(ticket_params)
+		if @ticket.update(sanitized_parameters)
 			flash[:notice] = "Ticket has been updated."
 			redirect_to [@project, @ticket]
 		else
@@ -66,5 +68,15 @@ class TicketsController < ApplicationController
 	def ticket_params
 		params.require(:ticket).permit(:name, :description, :tag_names,
 			attachments_attributes: [:file, :file_cache])
+	end
+
+	def sanitized_parameters
+		whitelisted_params = ticket_params
+
+		unless policy(@ticket).tag?
+			whitelisted_params.delete(:tag_names)
+		end
+
+		whitelisted_params
 	end
 end
