@@ -8,6 +8,16 @@ class TicketsController < ApplicationController
 		@ticket.attachments.build
 	end
 
+	def search
+		authorize @project, :show?
+		if params[:search].present?
+			@tickets = @project.tickets.search(params[:search])
+		else
+			@tickets = @project.tickets
+		end
+		render "projects/show"
+	end
+
 	def create
 		@ticket = @project.tickets.new
 

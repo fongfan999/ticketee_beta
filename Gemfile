@@ -20,6 +20,9 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 # Use Pundit for setting authorization role
 gem 'pundit', '~> 1.1'
 
+# Use Searcher for searching
+gem "searcher", github: "radar/searcher"
+
 # Use CarrierWave for uploading files
 gem 'carrierwave', '~> 0.11.0'
 
