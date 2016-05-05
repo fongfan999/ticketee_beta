@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502082032) do
+ActiveRecord::Schema.define(version: 20160504102214) do
 
   create_table "attachments", force: :cascade do |t|
     t.string   "file"
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(version: 20160502082032) do
 
   add_index "tags_tickets", ["tag_id", "ticket_id"], name: "index_tags_tickets_on_tag_id_and_ticket_id"
   add_index "tags_tickets", ["ticket_id", "tag_id"], name: "index_tags_tickets_on_ticket_id_and_tag_id"
+
+  create_table "ticket_watchers", id: false, force: :cascade do |t|
+    t.integer "ticket_id", null: false
+    t.integer "user_id",   null: false
+  end
+
+  add_index "ticket_watchers", ["ticket_id", "user_id"], name: "index_ticket_watchers_on_ticket_id_and_user_id"
+  add_index "ticket_watchers", ["user_id", "ticket_id"], name: "index_ticket_watchers_on_user_id_and_ticket_id"
 
   create_table "tickets", force: :cascade do |t|
     t.string   "name"

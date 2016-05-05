@@ -70,5 +70,6 @@ group :test do
 	gem 'selenium-webdriver', '~> 2.53'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem "chromedriver-helper"
+  gem 'email_spec', '~> 2.0'
 end
 
