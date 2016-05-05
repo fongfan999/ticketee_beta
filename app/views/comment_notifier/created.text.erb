@@ -1,1 +1,6 @@
+<%= @ticket.name %> for <%= @project.name %> has been updated.
+<%= @comment.author.email %> wrote:
+<%= @comment.text %>
+
+You can view thsi ticket online by going to:
 <%= project_ticket_url(@project, @ticket) %>
