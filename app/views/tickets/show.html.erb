@@ -42,6 +42,18 @@
 				<td><%= render @ticket.tags, ticket: @ticket %></td>
 			</tr>
 		<% end %>
+		<tr id="watchers">
+			<th>Watchers: </th>
+			<td>
+				<% if @ticket.watchers.include?(current_user) %>
+					<a class="watch disabled">You are watching.</a>
+				<% else %>
+					<a class="unwatch disabled">You are not watching.</a>
+				<% end %> <i class="fa fa-arrow-circle-right"></i> 
+				<%= toggle_watching_button(@ticket) %><br/>
+				<%= @ticket.watchers.map(&:email).to_sentence %>
+			</td>
+		</tr>
 	</table>
 
 	<%= simple_format(@ticket.description) %>
