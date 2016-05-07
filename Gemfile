@@ -26,6 +26,9 @@ gem "searcher", github: "radar/searcher"
 # Use CarrierWave for uploading files
 gem 'carrierwave', '~> 0.11.0'
 
+# Adding ActiveModel::Serializers
+gem 'active_model_serializers', '~> 0.9.5'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
