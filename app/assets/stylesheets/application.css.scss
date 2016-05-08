@@ -75,24 +75,6 @@ form {
 	max-width: 500px;
 }
 
-@media(max-width: $screen-sm-min) {
-	p {
-		color: red;
-	}
-}
-
-@media(max-width: $screen-xs-max) {
-	a {
-		color: blue;
-	}
-}
-
-@media(max-width: $screen-sm-max) {
-	h1 {
-		color: yellow;
-	}
-}
-
 footer {
 	margin-top: 50px;
 }

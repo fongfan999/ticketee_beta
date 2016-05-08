@@ -8,6 +8,11 @@ class TicketsController < ApplicationController
 		@ticket.attachments.build
 	end
 
+	def show
+		authorize @ticket, :show?
+		@comment = @ticket.comments.build(state_id: @ticket.state_id)
+	end
+
 	def search
 		authorize @project, :show?
 		if params[:search].present?
@@ -46,11 +51,6 @@ class TicketsController < ApplicationController
 			flash[:alert] = "Ticket has not been created."
 			render "new"
 		end
-	end
-
-	def show
-		authorize @ticket, :show?
-		@comment = @ticket.comments.build(state_id: @ticket.state_id)
 	end
 
 	def edit
